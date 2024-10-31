@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>钟润柯B</title>
+    <style type="text/css">
+        h2 { font-family: "楷体";font-size: 24px;}
+        p { background-color: aliceblue;}
+        p zrk {
+            color: blue;
+        }
+        .zrk100pc{line-height: 100%;}
+        .zrk200pc{line-height: 200%;}
+        .zrk2x{line-height: 2;}
+        .zrk20px{line-height: 20px;}
+        p .zrk1 {
+            word-spacing: normal;
+            letter-spacing: normal;
+        }
+        p .zrk2 {
+            word-spacing: 5px;
+            letter-spacing: 2px;
+        }
+        p .zrk3 {
+            word-spacing: 3px;
+            letter-spacing: -2px;
+        }
+        #zrk {
+            font-size: 20px; text-shadow: 1px 1px 1px #101010; color: pink;
+        }
+    </style>
+</head>
+<body>
+    <h2>段落行距设置</h2>
+    <p>
+        <zrk>默认行高：</zrk>
+        <span>大多数浏览器中，默认的行高度，大约是文字高度的110%到120%。</span>
+    </p>
+    <p class="zrk100pc">
+        <zrk>100%行高：</zrk>
+        <span>这个段落被设置为100%的行高度——行的高度即文字的高度，稍显拥挤</span>
+    </p>
+    <p class="zrk200pc">
+        <zrk>200%行高：</zrk>
+        <span>这个段落的行高度被设置为200%，你会发现“line-height:200%”与“line-height:2”效果一样</span>
+    </p>
+    <p class="zrk2x">
+        <zrk>2倍行高：</zrk>
+        <span>这个段落的行高度被设置为2，你会发现“line-height:2”与“line-height:200%”效果一样</span>
+    </p>
+    <p class="zrk20px">
+        <zrk>20像素行高：</zrk>
+        <span>这个段落的行高度被设置为固定的20px（px即pixel的简写，译为像素）。</span>
+    </p>
+    <h2>字词间距设置</h2>
+    <p>
+        <zrk>标准间距：</zrk>
+        <span class="zrk1">We are Chinese.We love our motherland</span>
+    </p>
+    <p>
+        <zrk>宽间距：</zrk>
+        <span class="zrk2">We are Chinese.We love our motherland</span>
+    </p>
+    <p>
+        <zrk>窄间距：</zrk>
+        <span class="zrk3">We are Chinese.We love our motherland</span>
+    </p>
+    <p id="zrk">作者：202435710252钟润柯</p>
+</body>
+</html>

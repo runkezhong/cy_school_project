@@ -1,0 +1,79 @@
+h2 { font-family: "楷体";font-size: 24px;text-shadow: 2px 2px 2px #606060;}
+p { background-color: rgb(113, 181, 241);}
+p zrk {
+    color: green;
+}
+.zrk100pc{line-height: 100%;}
+.zrk200pc{line-height: 200%;}
+.zrk2x{line-height: 2;}
+.zrk20px{line-height: 20px;}
+p .zrk1 {
+    word-spacing: normal;
+    letter-spacing: normal;
+}
+p .zrk2 {
+    word-spacing: 5px;
+    letter-spacing: 2px;
+}
+p .zrk3 {
+    word-spacing: 3px;
+    letter-spacing: -2px;
+}
+/* 定义3个ID选择器 */
+#zrkleft {text-align: left;}
+#zrkcenter {text-align: center;}
+#zrkright {text-align: right;}
+.zrktop {vertical-align: top;}
+.zrkmiddle {vertical-align: middle;}
+.zrkbottom {vertical-align: bottom;}
+#zrk {
+    font-size: 20px; text-shadow: 1px 1px 1px #101010; color: pink;
+}
+
+/* 任务D */
+.zrkparagraph {
+    font-weight: bold;
+    line-height: 300%;
+    background-color: #888;
+}
+.zrkbgimage1 {
+    background-image: url(./imageszrk/踏青4.png);
+}
+.zrkbgimage2 {
+    background-image: url(./imageszrk/踏青4.png);
+    background-repeat: repeat;
+    background-position-x: center;
+}
+.zrkbgimage3 {
+    background-image: url(./imageszrk/踏青4.png);
+    background-repeat: repeat;
+    background-position-y: center;
+}
+.zrkbgimage4 {
+    background-image: url(./imageszrk/踏青5.png);
+    background-repeat: no-repeat;
+    background-position-x: left;
+    background-position-y: top;
+}
+.zrkbgimage5 {
+    background-image: url(./imageszrk/踏青5.png);
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: center;
+}
+.zrkbgimage6 {
+    background-image: url(./imageszrk/踏青5.png);
+    background-repeat: no-repeat;
+    background-position-x: right;
+    background-position-y: bottom;
+}
+
+p .zrkindent {
+    text-indent: 2em;
+}
+
+p.zrkindent::first-letter {
+    font-size: 120%;
+    font-weight: bold;
+    color: #f00; /* 这里你可以选择任何颜色 */
+}

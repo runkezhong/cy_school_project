@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>钟润柯D</title>
+    <style>
+        .h4 {
+            color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <h4>音、视频标签属性</h4>
+    <ul>
+        <li>src（控件）属性：与img标签一样，这个标签也是定义音频、视频文件的名称及其
+            所在的目录路径；</li>
+        <li>controls（控件）属性：添加controls="controls"可使播放器界面上显示播放/暂
+            停、进度条、静音等控件；</li>
+        <li>muted（静音）属性：设置muted="muted"可使播放器静音；</li>
+        <li>loop（循环）属性：设置loop="loop"可实现循环（反复不断）播放；</li>
+        <li>autoplay（自动开始）属性：设置autoplay="autoplay"可实现打开网页即开始自
+            动播放一一遗憾的是，一些浏览器并不支持这个属性，也就是说不能自动播放；</li>
+        <li>width（宽度）、height（高度）属性：定义播放器的宽度、高度，注意：仅适用
+            于video标签。</li>
+    </ul>
+    <h4>audio音频展示</h4>
+    <audio controls="controls" loop="loop">
+        <source src="./static/audio/探清水河.mp3" type="audio/mp3">
+        </source>
+    </audio>
+    <h4>video视频展示</h4>
+    <video controls width="">
+        <source src="./static/video/大家一起学猫叫.mp4" type="video/webm" />
+    </video>
+</body>
+
+</html>
