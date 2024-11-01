@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>钟润柯A</title>
+    <style type="text/css">
+        * {
+            border: 0;
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            background-color: lightpink;
+        }
+        .zrkp {
+            background-color: yellow;
+            height: 66px;
+            margin: 10px;
+            padding: 5px;
+            border: red solid 5px;
+            border-radius: 20px;
+            /* 内容盒子 */
+            background-clip: content-box; 
+            /* 溢出处理方式 */
+            overflow: auto;
+        }
+        .zrkm {
+            background-color: white;
+            margin: 20px;
+            padding: 5px;
+            border-style: dashed;
+            /* 上边宽度为10px，左右边框宽度为5px */
+            border-width: 10px 5px;
+            border-color: green lime rgb(255,0,102) blue;
+            text-align: center;
+            position: relative;
+        }
+        .zrkx {
+            border: 1px solid;
+            width: 100px;
+            height: 120px;
+        }
+        .zrky {
+            border: 1px solid;
+            width: 50px;
+            height: 60px;
+        }
+    </style>
+</head>
+<body>
+    <p class="zrkp">
+        网页可看成由一个个盒子（板块）构成。要随心所欲地控制页面中每个盒子的样式，需掌握盒子模型的相关属性：背景颜色、背景图片、边框、外边距、内边距、宽度、高度、位置及定位方式、浮动方式等。
+    </p>
+    <p class="zrkm">
+        <img src="imageszrk/校花1.JPG" alt="" />
+        <img src="imageszrk/校花2.JPG" alt="" />
+        <img src="imageszrk/校花3.JPG" class="zrkx zrky" style="vertical-align: top; position: relative; top: 20px; left: 20px;" alt="" />
+        <img src="imageszrk/校草1.JPG" class="zrkx zrky" style="position: absolute; left: 5px; top: 5px;" alt="" />
+        <img src="imageszrk/校草2.JPG" class="zrkx zrky" style="position: absolute; right: 5px; bottom: 5px;" alt="" />
+        <img src="imageszrk/校草3.JPG" style="position: fixed; left: 85px; top: 20px;" alt="" />
+    </p>
+</body>
+</html>
