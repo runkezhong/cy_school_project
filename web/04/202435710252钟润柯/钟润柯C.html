@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>钟润柯C</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        .zrkcontainer {
+            width: 95%;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+        }
+        .zrkheader {
+            background-color: yellow;
+            height: 100px;
+        }
+        .zrknav {
+            width: 100%;
+            height: 30px;
+            background-color: red;
+            line-height: 30px
+        }
+        .zrknav ul {
+            display: flex;
+            justify-content: center;
+        }
+        .zrknav li {
+            list-style: none;
+            margin-left: 15px;
+            margin-right: 15px;
+        }
+        .navflag {
+            font-weight: bold;
+            color: yellow;
+        }
+        .zrkmain{
+            width: 100%;
+            /* height: 300px; */
+            display: flex;
+        }
+        .zrkmain .zrkleft {
+            width: 30%;
+            height: 400px;
+            /* display: flex; */
+            flex-direction: row;
+            /* background-color: gray; */
+        }
+        .zrkmain .zrkleft .left-item {
+            width: 100%;
+            height: 100px;
+            background: linear-gradient(to bottom, #f0f0f0, #808080);
+            /* background-color: cadetblue; */
+        }
+        .zrkmain .zrkcenter {
+            width: 40%;
+            height: 400px;
+            flex-direction: row;
+        }
+        .center-item1{
+            width: 100%;
+            height: 50%;
+            background: linear-gradient(to bottom, #f0f0f0, #808080);
+        }
+        .center-item2{
+            width: 100%;
+            height: 50%;
+            background: linear-gradient(to bottom, #f0f0f0, #808080);
+            overflow: auto;
+        }
+        .zrkmain .zrkright {
+            width: 30%;
+            height: 400px;
+            flex-direction: row;
+        }
+        .right-item1{
+            height: 33%;
+            background-color: rgba(0, 155, 255, 0.5);
+        }
+        .right-item2{
+            height: 34%;
+            background-color: rgba(0, 155, 255, 0.5);
+        }
+        .right-item3{
+            height: 33%;
+            background-color: rgba(0, 155, 255, 0.5);
+        }
+        .zrkfooter {
+            text-align: center;
+            height: 120px;
+            background-color: rgba(0, 0, 255, 0.5);
+            padding-top: 30px;
+            font-size: 26px;
+        }
+        .zrkfooter span{
+            display: block;
+            color: red;
+        }
+        
+    </style>
+</head>
+<body class="zrkcontainer">
+    <div class="zrkheader">
+        <h1>zrklogo</h1>
+        <marquee style="font-size: 20px;" behavior="scroll" direction="left" scrollamount="5">
+            Welcome to my website
+        </marquee>
+    </div>
+    <div class="zrknav">
+        <ul>
+            <li>zrknav</li>
+            <li class="navflag">导航1</li>
+            <li>导航2</li>
+            <li>导航3</li>
+            <li>导航4</li>
+            <li>导航5</li>
+        </ul>
+    </div>
+    <div class="zrkmain">
+        <div class="zrkleft">
+            <div class="left-item">zrkleft1</div>
+            <div class="left-item">zrkleft2</div>
+            <div class="left-item">zrkleft3</div>
+            <div class="left-item">zrkleft4</div>
+        </div>
+        <div class="zrkcenter">
+            <div class="center-item1">
+                zrkcenter1
+                <div>
+                    <img src="imageszrk/girls.jpg" width="30%" height="30%" alt="">
+                </div>
+            </div>
+            <div class="center-item2">
+                zrkcenter2
+                <div>
+                    <img src="imageszrk/girls.jpg" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="zrkright">
+            <div class="right-item1">zrkright1</div>
+            <div class="right-item2">zrkright2</div>
+            <div class="right-item3">zrkright3</div>
+        </div>
+    </div>
+    <div class="zrkfooter">
+        zrkfooter
+        <span>作者：钟润柯</span>
+    </div>
+</body>
+</html>
