@@ -1,0 +1,41 @@
+C51 COMPILER V9.01   SY04                                                                  10/30/2024 17:38:09 PAGE 1   
+
+
+C51 COMPILER V9.01, COMPILATION OF MODULE SY04
+OBJECT MODULE PLACED IN sy04.OBJ
+COMPILER INVOKED BY: D:\applications\Keil\C51\BIN\C51.EXE sy04.c BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          #include <reg51.h>
+   2          
+   3          sbit D1=P2^0;
+   4          
+   5          int0_srv() interrupt 0
+   6          {
+   7   1              D1=!D1;
+   8   1      }
+   9          main()
+  10          {
+  11   1              /*
+  12   1      
+  13   1                中断初始化，也可以分开写两句,EA=1和EX0=1;
+  14   1              */
+  15   1              IE=0x81;
+  16   1              IT0=1;
+  17   1              while(1);
+  18   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     10    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

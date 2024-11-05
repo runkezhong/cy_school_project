@@ -1,0 +1,411 @@
+C51 COMPILER V9.01   SY03_02                                                               10/23/2024 15:30:57 PAGE 1   
+
+
+C51 COMPILER V9.01, COMPILATION OF MODULE SY03_02
+OBJECT MODULE PLACED IN sy03_02.OBJ
+COMPILER INVOKED BY: D:\applications\Keil\C51\BIN\C51.EXE sy03_02.c BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          #include <reg51.h>
+   2          #include <intrins.h>
+   3          #define uchar unsigned char
+   4          #define uint unsigned int
+   5          
+   6          //0~9 的共阳数码管段码表
+   7          uchar code ledmod[] = {0xc0,0xf9,0xa4,0xb0,0x99,0x92,0x82,0xf8,0x80,
+   8                                                          0x90,0x88,0x83,0xa7,0xa1,0x86,0x8e,0xff}; // 0-9
+   9          /*
+  10          sbit K0=P1^0;
+  11          sbit K1=P1^1;
+  12          sbit K2=P1^2;
+  13          sbit K3=P1^3;
+  14          sbit K4=P1^4;
+  15          sbit K5=P1^5;     // 连接在 P1.5 引脚的按键，用来检测按键输入。
+  16          sbit K6=P1^6;     // 连接在 P1.6 引脚的按键，用来检测按键输入。
+  17          sbit K7=P1^7;     // 连接在 P1.5 引脚的按键，用来检测按键输入。
+  18          */
+  19          
+  20          
+  21          sbit wexu=P3^0;
+  22          sbit duxu=P3^1;
+  23          
+  24          uchar key;
+  25          void delayms(uint y)
+  26          {
+  27   1              uint i,j;
+  28   1              for(i=y;i>0;i--)
+  29   1              for(j=110;j>0;j--)
+  30   1              ;
+  31   1      }
+  32          
+  33          void display(uchar num)
+  34          {
+  35   1              /*
+  36   1              uchar wk=0x01; //该变量用于存位选数据（0000 0100）
+  37   1              uchar i; //改变位选的循环变量
+  38   1              uchar buf[4]; //定义一个数组缓存要显示的 shu
+  39   1              */
+  40   1              /*
+  41   1              if (shu >= 0 ){
+  42   1                       // 分解出千位、百位、十位和个位
+  43   1                  buf[0] = ledmod[shu / 1000]; // 千位
+  44   1                  buf[1] = ledmod[(shu % 1000) / 100]; // 百位
+  45   1                  buf[2] = ledmod[(shu % 100) / 10]; // 十位
+  46   1                  buf[3] = ledmod[shu % 10]; // 个位
+  47   1              }
+  48   1               */
+  49   1              /*
+  50   1              switch(btn){
+  51   1                      case -1:
+  52   1                              buf[0] = buf[1] = buf[2] = buf[3] = ledmod[10];
+  53   1                              break; 
+  54   1                      case -2:
+  55   1                              buf[0] = buf[1] = buf[2] = buf[3] = ledmod[11];
+C51 COMPILER V9.01   SY03_02                                                               10/23/2024 15:30:57 PAGE 2   
+
+  56   1                              break;
+  57   1                      case -3:
+  58   1                              buf[0] = ledmod[10];
+  59   1                              buf[1] = ledmod[10]; // 百位
+  60   1                          buf[2] = ledmod[10]; // 十位
+  61   1                              buf[3] = ledmod[shu % 10]; // 个位
+  62   1                              break;
+  63   1                      case -4:
+  64   1                              buf[0] = ledmod[10];
+  65   1                              buf[1] = ledmod[10]; // 百位
+  66   1                          buf[2] = ledmod[(shu % 100) / 10]; // 十位
+  67   1                              buf[3] = ledmod[shu % 10]; // 个位
+  68   1                              break;
+  69   1                      case -5:
+  70   1                              buf[0] = ledmod[10];
+  71   1                              buf[1] = ledmod[(shu % 1000) / 100]; // 百位
+  72   1                          buf[2] = ledmod[(shu % 100) / 10]; // 十位
+  73   1                              buf[3] = ledmod[shu % 10]; // 个位
+  74   1                              break;
+  75   1                       
+  76   1                      default:
+  77   1                               // 分解出千位、百位、十位和个位
+  78   1                              buf[0] = ledmod[shu / 1000]; // 千位
+  79   1                              buf[1] = ledmod[(shu % 1000) / 100]; // 百位
+  80   1                          buf[2] = ledmod[(shu % 100) / 10]; // 十位
+  81   1                              buf[3] = ledmod[shu % 10]; // 个位
+  82   1                              
+  83   1              }
+  84   1      
+  85   1      
+  86   1              for(i=0;i<4;i++)
+  87   1              {
+  88   1                      wexu = 1; // 打开位选锁存器 U3
+  89   1              P2 = wk; // 位选，选择当前要显示的数码管
+  90   1              wexu = 0; // 关闭位选锁存器
+  91   1      
+  92   1                      duxu = 1; // 打开段选锁存器 U2
+  93   1              P0 = buf[i]; // 将段码发送给数码管
+  94   1              duxu = 0; // 关闭段选锁存器
+  95   1      
+  96   1                      wk = _crol_(wk, 1); // 循环移位，选择下一个数码管
+  97   1              delayms(10); // 短暂延时，用于稳定显示
+  98   1              P0 = 0xff; // 消隐，避免重影现象
+  99   1              }
+ 100   1              */
+ 101   1              wexu=1;
+ 102   1              P2=0x0f;
+ 103   1              duxu=1;
+ 104   1              P0=ledmod[num];
+ 105   1              delayms(10);
+ 106   1              P0=0xff;
+ 107   1              
+ 108   1      
+ 109   1      }
+ 110          
+ 111          uchar juzhen_keyscan()
+ 112          {
+ 113   1              uchar temp;
+ 114   1              P1=0xf0;
+ 115   1              if((P1&0xf0)!=0xf0)
+ 116   1              {
+ 117   2                      delayms(10);
+C51 COMPILER V9.01   SY03_02                                                               10/23/2024 15:30:57 PAGE 3   
+
+ 118   2                      if((P1&0xf0)!=0xf0)
+ 119   2                      {
+ 120   3                              P1=0xfe;
+ 121   3                              temp=P1;
+ 122   3                              temp=temp&0xf0;
+ 123   3                              if (temp!=0xf0)
+ 124   3                              {
+ 125   4                                      delayms(10);
+ 126   4                                      temp=P1;
+ 127   4                                      temp=temp&0xf0;
+ 128   4                                      if(temp!=0xf0)
+ 129   4                                      {
+ 130   5                                              temp=P1;
+ 131   5                                              switch(temp)
+ 132   5                                              {
+ 133   6                                                      case 0xee: key=0;
+ 134   6                                                              break;
+ 135   6                                                      case 0xde: key=1;
+ 136   6                                                              break;
+ 137   6                                                      case 0xbe: key=2;
+ 138   6                                                              break;
+ 139   6                                                      case 0x7e: key=3;
+ 140   6                                                              break;
+ 141   6                                              }
+ 142   5                                              while(temp!=0xf0)
+ 143   5                                              {
+ 144   6                                                      temp=P1;
+ 145   6                                                      temp=temp&0xf0;
+ 146   6                                              }
+ 147   5                                      }
+ 148   4                              }
+ 149   3      
+ 150   3                              P1=0xfd;
+ 151   3                              temp=P1;
+ 152   3                              temp=temp&0xf0;
+ 153   3                              if(temp!=0xf0)
+ 154   3                              {
+ 155   4                                      delayms(10);
+ 156   4                                      temp=P1;
+ 157   4                                      temp=temp&0xf0;
+ 158   4                                      if(temp!=0xf0)
+ 159   4                                      {
+ 160   5                                              temp=P1;
+ 161   5                                              switch(temp)
+ 162   5                                              {
+ 163   6                                                      case 0xed: key=4;
+ 164   6                                                              break;
+ 165   6                                                      case 0xdd: key=5;
+ 166   6                                                              break;
+ 167   6                                                      case 0xbd: key=6;
+ 168   6                                                              break;
+ 169   6                                                      case 0x7d: key=7;
+ 170   6                                                              break;
+ 171   6                                              }
+ 172   5                                              while(temp!=0xf0)
+ 173   5                                              {
+ 174   6                                                      temp=P1;
+ 175   6                                                      temp=temp&0xf0;
+ 176   6                                              }
+ 177   5                                      }
+ 178   4                              }
+ 179   3      
+C51 COMPILER V9.01   SY03_02                                                               10/23/2024 15:30:57 PAGE 4   
+
+ 180   3                              P1=0xfb;
+ 181   3                              temp=P1;
+ 182   3                              temp=temp&0xf0;
+ 183   3                              if(temp!=0xf0)
+ 184   3                              {
+ 185   4                                      delayms(10);
+ 186   4                                      temp=P1;
+ 187   4                                      temp=temp&0xf0;
+ 188   4                                      if(temp!=0xf0)
+ 189   4                                      {
+ 190   5                                              temp=P1;
+ 191   5                                              switch(temp)
+ 192   5                                              {
+ 193   6                                                      case 0xeb: key=8;
+ 194   6                                                              break;
+ 195   6                                                      case 0xdb: key=9;
+ 196   6                                                              break;
+ 197   6                                                      case 0xbb: key=10;
+ 198   6                                                              break;
+ 199   6                                                      case 0x7b: key=11;
+ 200   6                                                              break;
+ 201   6                                              }
+ 202   5                                              while(temp!=0xf0)
+ 203   5                                              {
+ 204   6                                                      temp=P1;
+ 205   6                                                      temp=temp&0xf0;
+ 206   6                                              }
+ 207   5                                      }
+ 208   4                              }
+ 209   3                              P1=0xf7;
+ 210   3                              temp=P1;
+ 211   3                              temp=temp&0xf0;
+ 212   3                              if(temp!=0xf0)
+ 213   3                              {
+ 214   4                                      delayms(10);
+ 215   4                                      temp=P1;
+ 216   4                                      temp=temp&0xf0;
+ 217   4                                      if(temp!=0xf0)
+ 218   4                                      {
+ 219   5                                              temp=P1;
+ 220   5                                              switch(temp)
+ 221   5                                              {
+ 222   6                                                      case 0xe7: key=12;
+ 223   6                                                              break;
+ 224   6                                                      case 0xd7: key=13;
+ 225   6                                                              break;
+ 226   6                                                      case 0xb7: key=14;
+ 227   6                                                              break;
+ 228   6                                                      case 0x77: key=15;
+ 229   6                                                              break;
+ 230   6                                              }
+ 231   5                                              while(temp!=0xf0)
+ 232   5                                              {
+ 233   6                                                      temp=P1;
+ 234   6                                                      temp=temp&0xf0;
+ 235   6                                              }
+ 236   5                                      }
+ 237   4                              }
+ 238   3                      }
+ 239   2              }
+ 240   1              return (key);
+ 241   1      }
+C51 COMPILER V9.01   SY03_02                                                               10/23/2024 15:30:57 PAGE 5   
+
+ 242          void main(){
+ 243   1              while(1)
+ 244   1              {
+ 245   2                      juzhen_keyscan();
+ 246   2                      display(key);
+ 247   2              }
+ 248   1              /*
+ 249   1              uint frist_P3 = -1 ,frist_P4 = -1 , frist_P5 = -1;
+ 250   1              uint btn = 0;
+ 251   1              // char num;
+ 252   1              uint num;  // 改为 unsigned int，支持更大的数值范围
+ 253   1              num = 0;
+ 254   1              while(1)
+ 255   1              {
+ 256   1                      display(num,btn); // 显示当前数值
+ 257   1      
+ 258   1                      if (K0 == 0){
+ 259   1                              delayms(10); // 防抖处理
+ 260   1                  if(K0 == 0) // 确认按键按下
+ 261   1                  {
+ 262   1      
+ 263   1                      btn = -1;
+ 264   1                  }   
+ 265   1      
+ 266   1                      }
+ 267   1                      while(!K0);
+ 268   1      
+ 269   1      
+ 270   1                      if (K1 == 0){
+ 271   1                              delayms(10); // 防抖处理
+ 272   1                  if(K1 == 0) // 确认按键按下
+ 273   1                  {
+ 274   1      
+ 275   1                      btn = -2;
+ 276   1      
+ 277   1                  }   
+ 278   1      
+ 279   1                      }
+ 280   1                      while(!K1);
+ 281   1      
+ 282   1      
+ 283   1                      if (K2 == 0){
+ 284   1                              delayms(10); // 防抖处理
+ 285   1                  if(K2 == 0) // 确认按键按下
+ 286   1                  {
+ 287   1                                      
+ 288   1                                      btn = -3;
+ 289   1                                      num++;  
+ 290   1                                      if(num > 9) // 数值到9999后重置为0
+ 291   1                      {
+ 292   1                          num = num % 10;
+ 293   1                      }       
+ 294   1                  }   
+ 295   1      
+ 296   1                      }
+ 297   1                      while(!K2);
+ 298   1      
+ 299   1                      if (K3 == 0){
+ 300   1                              delayms(10); // 防抖处理
+ 301   1                  if(K3 == 0) // 确认按键按下
+ 302   1                  {
+ 303   1      
+C51 COMPILER V9.01   SY03_02                                                               10/23/2024 15:30:57 PAGE 6   
+
+ 304   1                      btn = -4;
+ 305   1                                      num++;  
+ 306   1                                      if(num > 99) // 数值到9999后重置为0
+ 307   1                      {
+ 308   1                          num = num % 100;
+ 309   1                      }
+ 310   1                  }   
+ 311   1      
+ 312   1                      }
+ 313   1                      while(!K3);
+ 314   1      
+ 315   1                      if (K4 == 0){
+ 316   1                              delayms(10); // 防抖处理
+ 317   1                  if(K4 == 0) // 确认按键按下
+ 318   1                  {
+ 319   1      
+ 320   1                      btn = -5;
+ 321   1                                      num++;  
+ 322   1                                      if(num > 999) // 数值到9999后重置为0
+ 323   1                      {
+ 324   1                          num = num % 1000;
+ 325   1                      }
+ 326   1                  }   
+ 327   1      
+ 328   1                      }
+ 329   1                      while(!K4);
+ 330   1      
+ 331   1      
+ 332   1      
+ 333   1      
+ 334   1              
+ 335   1              if(K5 == 0) // 检测按键是否按下
+ 336   1              {
+ 337   1                  delayms(10); // 防抖处理
+ 338   1                  if(K5 == 0) // 确认按键按下
+ 339   1                  {
+ 340   1                                      btn = 0;
+ 341   1                      num = 0;
+ 342   1                  }
+ 343   1              }
+ 344   1              while(!K5); // 等待按键释放
+ 345   1                      
+ 346   1      
+ 347   1                      if(K6 == 0)     {
+ 348   1                              delayms(10);
+ 349   1                              if (K6 == 0){
+ 350   1                                      btn = 0;
+ 351   1                                      num++;
+ 352   1                                      if(num > 9999) // 数值到9999后重置为0
+ 353   1                      {
+ 354   1                          num = 0;
+ 355   1                      }
+ 356   1                              }
+ 357   1                      }
+ 358   1                      while(!K6); // 等待按键释放
+ 359   1      
+ 360   1                      if(K7 == 0)     {
+ 361   1                              delayms(10);
+ 362   1                              if (K7 == 0){
+ 363   1                                      btn = 0;
+ 364   1                                      if (num <= 0){
+ 365   1                                              num = 0;
+C51 COMPILER V9.01   SY03_02                                                               10/23/2024 15:30:57 PAGE 7   
+
+ 366   1                                              break;
+ 367   1                                      }
+ 368   1                                      num--;
+ 369   1                              }
+ 370   1                      }
+ 371   1                      while(!K7); // 等待按键释放
+ 372   1      
+ 373   1      
+ 374   1              }
+ 375   1              */
+ 376   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    428    ----
+   CONSTANT SIZE    =     17    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =      1       1
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

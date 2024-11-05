@@ -1,0 +1,5 @@
+"STARTUP.obj",
+"sy04.obj",
+"sy04_02.obj" 
+TO "sy04" 
+RAMSIZE(256) 

@@ -1,0 +1,84 @@
+C51 COMPILER V9.01   SY03                                                                  10/12/2024 19:04:37 PAGE 1   
+
+
+C51 COMPILER V9.01, COMPILATION OF MODULE SY03
+OBJECT MODULE PLACED IN sy03.OBJ
+COMPILER INVOKED BY: D:\applications\Keil\C51\BIN\C51.EXE sy03.c BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          #include <reg51.h>
+   2          #include <intrins.h>
+   3          
+   4          #define uchar unsigned char
+   5          #define uint unsigned int
+   6          
+   7          uchar code ledmod[] = {0xc0,0xf9,0xa4,0xb0,0x99,0x92,0x82,0xf8,0x80,0x90};
+   8          
+   9          sbit K5=P1^5;
+  10          sbit wexu=P3^0;
+  11          sbit duxu=P3^1;
+  12          void delayms(uint y)
+  13          {
+  14   1              uint i,j;
+  15   1              for(i=y;i>0;i--)
+  16   1                      for(j=110;j>0;j--)
+  17   1                              ;
+  18   1      }
+  19          
+  20          void display(uchar shu)
+  21          {
+  22   1              uchar wk=0x04;
+  23   1              uchar i;
+  24   1              uchar buf[2];
+  25   1              buf[0]=ledmod[shu/10];
+  26   1              buf[1]=ledmod[shu%10];
+  27   1              for(i=0;i<2;i++)
+  28   1              {
+  29   2                      wexu=1;
+  30   2                      P2=wk;
+  31   2                      duxu=1;
+  32   2                      P0=buf[i];
+  33   2                      wk=_crol_(wk,1);
+  34   2                      delayms(10);
+  35   2                      P0=0xff;
+  36   2              }
+  37   1      }
+  38          void main()
+  39          {
+  40   1              char num;
+  41   1              num=0;
+  42   1              while(1)
+  43   1              {
+  44   2                      display(num);
+  45   2                      if(K5==0)
+  46   2                      {
+  47   3                              delayms(10); // ÑÓÊ±10msÔÙ¼ì²â
+  48   3                              if(K5==0)
+  49   3                              {
+  50   4                                      num++;
+  51   4                                      if(num==100)
+  52   4                                      {
+  53   5                                              num=0;
+  54   5                                      }
+  55   4                              }
+C51 COMPILER V9.01   SY03                                                                  10/12/2024 19:04:37 PAGE 2   
+
+  56   3                      }
+  57   2                      while(!K5);
+  58   2              }
+  59   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    126    ----
+   CONSTANT SIZE    =     10    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----       2
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

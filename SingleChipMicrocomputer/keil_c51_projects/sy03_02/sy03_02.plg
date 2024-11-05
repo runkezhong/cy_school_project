@@ -1,0 +1,74 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Project:</h2>
+D:\DataCenter\school_project\SingleChipMicrocomputer\keil_c51_projects\sy03_02\sy03_02.uvproj
+Project File Date:  10/23/2024
+
+<h2>Output:</h2>
+Build target 'Target 1'
+assembling STARTUP.A51...
+compiling sy03_02.c...
+linking...
+Program Size: data=24.0 xdata=0 code=900
+creating hex file from "sy03_02"...
+"sy03_02" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+assembling STARTUP.A51...
+compiling sy03_02.c...
+SY03_02.C(100): error C202: 'num': undefined identifier
+SY03_02.C(129): error C202: 'key': undefined identifier
+SY03_02.C(131): error C202: 'key': undefined identifier
+SY03_02.C(133): error C202: 'key': undefined identifier
+SY03_02.C(135): error C202: 'key': undefined identifier
+SY03_02.C(159): error C202: 'key': undefined identifier
+SY03_02.C(161): error C202: 'key': undefined identifier
+SY03_02.C(163): error C202: 'key': undefined identifier
+SY03_02.C(165): error C202: 'key': undefined identifier
+SY03_02.C(189): error C202: 'key': undefined identifier
+SY03_02.C(191): error C202: 'key': undefined identifier
+SY03_02.C(193): error C202: 'key': undefined identifier
+SY03_02.C(195): error C202: 'key': undefined identifier
+SY03_02.C(218): error C202: 'key': undefined identifier
+SY03_02.C(220): error C202: 'key': undefined identifier
+SY03_02.C(222): error C202: 'key': undefined identifier
+SY03_02.C(224): error C202: 'key': undefined identifier
+SY03_02.C(236): error C202: 'key': undefined identifier
+SY03_02.C(242): error C202: 'key': undefined identifier
+Target not created
+Build target 'Target 1'
+assembling STARTUP.A51...
+compiling sy03_02.c...
+SY03_02.C(100): error C202: 'num': undefined identifier
+SY03_02.C(129): error C202: 'key': undefined identifier
+SY03_02.C(131): error C202: 'key': undefined identifier
+SY03_02.C(133): error C202: 'key': undefined identifier
+SY03_02.C(135): error C202: 'key': undefined identifier
+SY03_02.C(159): error C202: 'key': undefined identifier
+SY03_02.C(161): error C202: 'key': undefined identifier
+SY03_02.C(163): error C202: 'key': undefined identifier
+SY03_02.C(165): error C202: 'key': undefined identifier
+SY03_02.C(189): error C202: 'key': undefined identifier
+SY03_02.C(191): error C202: 'key': undefined identifier
+SY03_02.C(193): error C202: 'key': undefined identifier
+SY03_02.C(195): error C202: 'key': undefined identifier
+SY03_02.C(218): error C202: 'key': undefined identifier
+SY03_02.C(220): error C202: 'key': undefined identifier
+SY03_02.C(222): error C202: 'key': undefined identifier
+SY03_02.C(224): error C202: 'key': undefined identifier
+SY03_02.C(236): error C202: 'key': undefined identifier
+SY03_02.C(242): error C202: 'key': undefined identifier
+Target not created
+Build target 'Target 1'
+assembling STARTUP.A51...
+compiling sy03_02.c...
+SY03_02.C(103): error C202: 'num': undefined identifier
+Target not created
+Build target 'Target 1'
+assembling STARTUP.A51...
+compiling sy03_02.c...
+linking...
+Program Size: data=11.0 xdata=0 code=460
+creating hex file from "sy03_02"...
+"sy03_02" - 0 Error(s), 0 Warning(s).

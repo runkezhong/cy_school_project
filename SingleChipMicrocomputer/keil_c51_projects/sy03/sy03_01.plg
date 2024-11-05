@@ -1,0 +1,22 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Project:</h2>
+D:\DataCenter\school_project\SingleChipMicrocomputer\keil_c51_projects\sy03\sy03_01.uvproj
+Project File Date:  10/12/2024
+
+<h2>Output:</h2>
+Build target 'Target 1'
+assembling STARTUP.A51...
+compiling sy03.c...
+SY03.C(34): warning C206: 'dekayms': missing function-prototype
+SY03.C(34): error C267: 'dekayms': requires ANSI-style prototype
+Target not created
+Build target 'Target 1'
+assembling STARTUP.A51...
+compiling sy03.c...
+linking...
+Program Size: data=11.0 xdata=0 code=151
+creating hex file from "sy03_01"...
+"sy03_01" - 0 Error(s), 0 Warning(s).
