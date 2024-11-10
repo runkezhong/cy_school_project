@@ -35,7 +35,7 @@
         }
         .box_table tr th {
             height: 30px;
-            border: none;
+            /* border: ; */
         }
         .box_table tr td {
             height: 30px;
@@ -58,6 +58,10 @@
         }
         .border_right_solid {
             border-right: 2px solid black;
+        }
+
+        .border_bottom_solid {
+            border-bottom: 2px solid black;
         }
 
         .border_right_none {
@@ -97,23 +101,23 @@
             </tr>
         </thead>
         <tr class="">
-            <th rowspan="3" class="border_right_solid bg-gray">周</th>
+            <th rowspan="3" class="border_left_solid border_right_solid bg-gray">周</th>
             <th colspan="3" class="bg-gray table_bottom_none border_right_solid" style="border-bottom: none;">第12节</th>
             <th colspan="3" class="bg-gray table_bottom_none border_right_solid">第34节</th>
-            <th colspan="3" class="bg-gray table_bottom_none    ">第56节</th>
+            <th colspan="3" class="bg-gray table_bottom_none border_right_solid">第56节</th>
         </tr>
         <tr class="">
-            <th colspan="3" class="border_right_solid">（08:30-10:10）</th>
-            <th colspan="3" class="border_right_solid">（10:30-12:10）</th>
-            <th colspan="3">（14:30-16:10）</th>
+            <th colspan="3" class="bg-gray border_right_solid border_bottom_solid">（08:30-10:10）</th>
+            <th colspan="3" class="bg-gray border_right_solid border_bottom_solid">（10:30-12:10）</th>
+            <th colspan="3" class="bg-gray border_bottom_solid border_right_solid">（14:30-16:10）</th>
         </tr>
         <tr class="">
-            <th colspan="1" class="border_right_solid">教室</th>
-            <th colspan="2" class="border_right_solid">课程</th>
-            <th colspan="1" class="border_right_solid">教室</th>
-            <th colspan="2" class="border_right_solid">课程</th>
-            <th colspan="1" class="border_right_solid">教室</th>
-            <th colspan="2">课程</th>
+            <th colspan="1" class="bg-gray border_right_solid">教室</th>
+            <th colspan="2" class="bg-gray border_right_solid">课程</th>
+            <th colspan="1" class="bg-gray border_right_solid">教室</th>
+            <th colspan="2" class="bg-gray border_right_solid">课程</th>
+            <th colspan="1" class="bg-gray border_right_solid">教室</th>
+            <th colspan="2" class="bg-gray border_right_solid">课程</th>
         </tr>
         <!-- 周一 -->
         <tr class="table_border">
