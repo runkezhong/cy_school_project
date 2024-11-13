@@ -9,21 +9,152 @@
             margin: 0;
             padding: 0;
             border: 0;
+            box-sizing: border-box;
         }
         .container {
-    
-            /* margin: 0 auto; */
+            width: 1060px;
+            margin: 0 auto;
+        }
+        .header {
+            width: 100%;
+            height: 87px;
+            background-image: url(imageszrk/bj.jpg);
+            /* background-repeat: no-repeat; */
+            display: flex;
+        }
+        .header .logo {
+            width: 236px;
+            text-align: center;
+        }
+        .header .logo img {
+            margin-top: 20px;
+            display: block;
             margin-left: auto;
             margin-right: auto;
         }
-        .header {
-            width: 100px; height: 100px; background-color: aqua;
+        .header .header_content {
+            width: 743px;
+        }
+        .pc1 {
+            height: 49px;
+            background-image: url(imageszrk/pic_1.jpg);
+        }
+        .bj1 {
+            height: 38px;
+            background-image: url(imageszrk/bj_1.jpg);
+            display: flex;
+            justify-content: space-around;
+        }
+        .button {
+            line-height: 38px;
+            padding-left: 10px;
+            padding-right: 10px;
+            color: #888;
+        }
+        .button a{
+            color: #888;
+            text-decoration: none;
+        }
+        .button a:hover {
+            font-weight: bold;
+            font-size: 20px;
+        }
+        .header .right_bj{
+            width: 81px;
+            height: 100%;
+            background-image: url(imageszrk/bj.jpg);
+        }
+        .main {
+            width: 100%;
+            height: 404px;
+            /* background-image: url(imageszrk/bj_2.jpg); */
+            display: flex;
+        }
+        .main .left_content {
+            width: 403px;
+            height: 100%;
+            
+        }
+        .main .right_content {
+            width: 657px;
+            height: 212px;
+        }
+        .main .right_content .right_top_content {
+            height: 212px;
+            display: flex;
+        }
+        .right_top_left_content {
+            background-image: url(imageszrk/bj_2.jpg);
+            height: 212px;
+        }
+        .main2 {
+            width: 100%;
+            height: 208px;
+        }
+        .footer {
+            width: 100%;
+            height: 69px;
+            background-image: url(imageszrk/bj_3.jpg);
+            line-height: 69px;
+            text-align: center;
+            font-size: 15px;
+            color: rgb(80, 175, 234);
+        }
+        .footer a {
+            color: rgb(80, 175, 234);
+            text-decoration: none;
+        }
+        .footer a:hover {
+            color: #000;
+            font-weight: bold;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="header"></div>
+        <div class="header">
+            <div class="logo">
+                <a href="钟润柯C.html"><img src="imageszrk/logo.png" alt="Image"></a>
+            </div>
+            <div class="header_content">
+                <div class="pc1"></div>
+                <div class="bj1">
+                    <div class="button"><a href="钟润柯A.html">首页</a></div>
+                    <div class="button"><a href="钟润柯A.html">关于我们</a></div>
+                    <div class="button"><a href="钟润柯A.html">新闻中心</a></div>
+                    <div class="button"><a href="钟润柯A.html">产品专区</a></div>
+                    <div class="button"><a href="钟润柯A.html">团购专区</a></div>
+                    <div class="button"><a href="钟润柯A.html">销售网络</a></div>
+                </div>
+            </div>
+            <div class="right_bj"></div>
+        </div>
+        <div class="main">
+            <div class="left_content">
+                <a href="#"><img src="imageszrk/pic.jpg" alt=""></a>
+            </div>
+            <div class="right_content">
+                <div class="right_top_content">
+                    <div class="right_top_left_content">
+                        <a href="#"><img src="imageszrk/logo2.png" alt=""></a>
+                    </div>
+                    <div class="right_top_right_content">
+                        <a href="#"><img src="imageszrk/pic_3.jpg" alt=""></a>
+                    </div>
+                </div>
+                <div class="right_bottom_content">
+                    <a href="#"><img src="imageszrk/pic_2.jpg" alt=""></a>
+                </div>
+            </div>
+        </div>
+        <div class="main2">
+            <a href="#"><img src="imageszrk/pic_4.jpg" alt=""></a>
+        </div>
+        <div class="footer">
+            <a href="#">©家用纺织品有限公司</a>，<a href="#">网站地图</a>，<a href="#">隐私保护</a>，
+            <a href="#">友情链接</a>，<a href="#">联系我们</a>，<a href="#">加入我们</a>，<a href="#">企业邮箱</a>，<a href="#">莞ICP备05028148号</a>，
+            <a href="#">作者：钟润柯</a>
+        </div>
     </div>
 </body>
 </html>
