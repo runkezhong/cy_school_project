@@ -1,11 +1,156 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>钟润柯B</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #container {
+            margin-top: 20px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .table_box tr td {
+            width: 300px;
+            height: 50px;
+        }
+
+        .img_height_80px {
+            height: 80px;
+        }
+
+        .bg_yellow {
+            background-color: rgb(255, 255, 153);
+        }
+
+        .bg_green {
+            background-color: rgb(0, 153, 51);
+        }
+
+        .bg_pink {
+            background-color: rgb(220, 150, 253);
+        }
+
+        .bg_small_blue {
+            background-color: rgb(51, 255, 255);
+        }
+
+        .bg_blue {
+            background-color: rgb(0, 153, 255);
+        }
+
+        .bg_gray {
+            background-color: rgb(162, 162, 162);
+        }
+
+        .bg_orange {
+            background-color: rgb(255, 102, 0);
+        }
+    </style>
 </head>
-<body>
-    
+
+<body id="container">
+    <table border="1" class="table_box">
+        <tr>
+            <td colspan="2" class="bg_yellow">
+                <marquee direction="right">钟润柯向右滚动</marquee>
+            </td>
+            <td colspan="2" class="bg_yellow">
+                <marquee direction="left">钟润柯向左滚动</marquee>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" class="bg_green">
+                <marquee direction="up">钟润柯向上滚动</marquee>
+            </td>
+            <td colspan="2" class="bg_green">
+                <marquee direction="down">钟润柯向下滚动</marquee>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" class="bg_small_blue">
+                <marquee direction="left" behavior="alternate">钟润柯左右来回滚动</marquee>
+            </td>
+            <td colspan="2" class="bg_small_blue">
+                <marquee direction="up" behavior="alternate">钟润柯上下来回滚动</marquee>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" class="bg_pink">
+                <marquee direction="left" scrollamount=100>钟润柯滚动的速度很快：滚动量100</marquee>
+            </td>
+            <td colspan="2" class="bg_pink">
+                <marquee direction="right" scrollamount=10>钟润柯滚动的速度慢了不少：滚动量10</marquee>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" class="bg_blue">
+                <marquee direction="left" scrolldelay="100">钟润柯正在大踏步前进：延迟100</marquee>
+            </td>
+            <td colspan="2" class="bg_blue">
+                <marquee direction="right" scrolldelay="500">钟润柯才不急，慢慢走：延迟500</marquee>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" class="bg_gray">
+                <marquee direction="left" scrolldelay="500" style="width: 200px; height: 18px; background-color: red;">
+                    钟润柯的地盘：宽200像素，高18像素，红色背景</marquee>
+            </td>
+            <td colspan="2" class="bg_gray">
+                <marquee direction="up"
+                    style="width: 200px; height: 18px; padding-top: 20px; padding-bottom: 20px; background-color: red;">
+                    钟润柯的地盘：宽200像素，高18像素，水平、垂直间距均为20，红色背景</marquee>
+            </td>
+        </tr>
+        <tr>
+            <td style="height: 80px;" class="bg_gray">
+                <marquee direction="right"><img src="imageszrk/校花1.JPG" alt=""></marquee>
+            </td>
+            <td style="height: 80px;" class="bg_gray">
+                <marquee direction="left"><img src="imageszrk/校花1.JPG" alt=""></marquee>
+            </td>
+            <td style="height: 80px;" class="bg_gray">
+                <marquee direction="up"><img src="imageszrk/校草8.JPG" alt=""></marquee>
+            </td>
+            <td style="height: 80px;" class="bg_gray">
+                <marquee direction="down"><img src="imageszrk/校草8.JPG" alt=""></marquee>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="4" class="bg_orange">
+                <div style="margin-top: 10px; margin-bottom: 10px;">
+                    <marquee direction="left">
+                        <img class="img_height_80px" src="imageszrk/校花1.JPG" alt="">
+                        <img class="img_height_80px" src="imageszrk/校草2.JPG" alt="">
+                        <img class="img_height_80px" src="imageszrk/校花3.JPG" alt="">
+                        <img class="img_height_80px" src="imageszrk/校草4.JPG" alt="">
+                        <img class="img_height_80px" src="imageszrk/校花5.JPG" alt="">
+                        <img class="img_height_80px" src="imageszrk/校草6.JPG" alt="">
+                        <img class="img_height_80px" src="imageszrk/校花7.JPG" alt="">
+                        <img class="img_height_80px" src="imageszrk/校草8.JPG" alt="">
+                    </marquee>
+                </div>
+
+            </td>
+        </tr>
+        <tr>
+            <td colspan="4" class="bg_orange">
+                <div style="margin-top: 10px; margin-bottom: 10px;">
+                    <marquee onmouseover=this.stop() onmouseout=this.start()>
+                        我逗你玩————鼠标进入我的地盘时我就停止滚动，鼠标离开的时候我再继续滚动
+                    </marquee>
+                </div>
+            </td>
+        </tr>
+    </table>
+
 </body>
+
 </html>
