@@ -1,0 +1,17 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Project:</h2>
+D:\DataCenter\school_project\SingleChipMicrocomputer\keil_c51_projects\sy04_04\sy_04_04.uvproj
+Project File Date:  11/05/2024
+
+<h2>Output:</h2>
+Build target 'Target 1'
+assembling STARTUP.A51...
+compiling main.c...
+MAIN.C(12): warning C290: missing return value
+linking...
+Program Size: data=11.0 xdata=0 code=261
+creating hex file from "sy_04_04"...
+"sy_04_04" - 0 Error(s), 1 Warning(s).

@@ -1,0 +1,59 @@
+C51 COMPILER V9.01   SY06_01                                                               11/20/2024 17:40:56 PAGE 1   
+
+
+C51 COMPILER V9.01, COMPILATION OF MODULE SY06_01
+OBJECT MODULE PLACED IN sy06_01.OBJ
+COMPILER INVOKED BY: D:\applications\Keil\C51\BIN\C51.EXE sy06_01.c BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          #include <reg51.h>
+   2          
+   3          unsigned char code Tab[] = {0xFE,0xFD,0xFB,0xF7,0xEF,0xDF,0xBF,0x7F,0xaa,0x0f,0xf0,0x55};
+   4          void Send(unsigned char dat)
+   5          {
+   6   1              SBUF=dat;
+   7   1              while(TI==0)
+   8   1                      ;
+   9   1              TI=0;
+  10   1      }
+  11          void delay(void)
+  12          {
+  13   1      
+  14   1         unsigned int m;
+  15   1         for(m=0;m<50000;m++)
+  16   1              ;
+  17   1      }
+  18          
+  19          void main(void)
+  20          {
+  21   1              unsigned char i;
+  22   1              TMOD=0x20;
+  23   1              SCON=0x40;
+  24   1              PCON=0x00;
+  25   1              TH1=0xfd;
+  26   1              TL1=0xfd;
+  27   1              TR1=1;
+  28   1              while(1)
+  29   1              {
+  30   2                      for(i=0;i<12;i++)
+  31   2                      {
+  32   3                              Send(Tab[i]);
+  33   3                              delay();
+  34   3                      }
+  35   2              }
+  36   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     78    ----
+   CONSTANT SIZE    =     12    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----       1
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

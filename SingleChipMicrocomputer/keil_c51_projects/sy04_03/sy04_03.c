@@ -34,7 +34,8 @@ void main()
 	//D1 = 1;
 	uchar k0Pressed = 0, k1Pressed = 0;
 	uchar j;
-	// P0 = 0x00; // 数码管亮屏
+	P0 = 0x00; // 数码管亮屏
+	P1 = 1;
     while (1)
     {
 		

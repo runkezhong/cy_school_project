@@ -1,0 +1,147 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        11/27/2024  17:17:00  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+D:\APPLICATIONS\KEIL\C51\BIN\BL51.EXE STARTUP.obj, sy06_02_b.obj TO sy06_02_b
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  STARTUP.obj (?C_STARTUP)
+  sy06_02_b.obj (SY06_02_B)
+
+
+LINK MAP OF MODULE:  sy06_02_b (?C_STARTUP)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     0001H     UNIT         ?DT?SY06_02_B
+            IDATA   0009H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+                    0003H     0020H                  *** GAP ***
+            CODE    0023H     0003H     ABSOLUTE     
+                    0026H     07DAH                  *** GAP ***
+            CODE    0800H     001DH     UNIT         ?PR?SERIAL?SY06_02_B
+            CODE    081DH     0014H     UNIT         ?PR?MAIN?SY06_02_B
+            CODE    0831H     000CH     UNIT         ?C_C51STARTUP
+            CODE    083DH     0009H     UNIT         ?CO?SY06_02_B
+
+
+
+OVERLAY MAP OF MODULE:   sy06_02_b (?C_STARTUP)
+
+
+SEGMENT
+  +--> CALLED SEGMENT
+---------------------
+?C_C51STARTUP
+  +--> ?PR?MAIN?SY06_02_B
+
+*** NEW ROOT ***************************************************
+
+?PR?SERIAL?SY06_02_B
+  +--> ?CO?SY06_02_B
+
+
+
+SYMBOL TABLE OF MODULE:  sy06_02_b (?C_STARTUP)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        ?C_STARTUP
+  C:0831H         SEGMENT       ?C_C51STARTUP
+BL51 BANKED LINKER/LOCATER V6.22                                                      11/27/2024  17:17:00  PAGE 2
+
+
+  I:0009H         SEGMENT       ?STACK
+  C:0000H         PUBLIC        ?C_STARTUP
+  D:00E0H         SYMBOL        ACC
+  D:00F0H         SYMBOL        B
+  D:0083H         SYMBOL        DPH
+  D:0082H         SYMBOL        DPL
+  N:0000H         SYMBOL        IBPSTACK
+  N:0100H         SYMBOL        IBPSTACKTOP
+  N:0080H         SYMBOL        IDATALEN
+  C:0834H         SYMBOL        IDATALOOP
+  N:0000H         SYMBOL        PBPSTACK
+  N:0100H         SYMBOL        PBPSTACKTOP
+  N:0000H         SYMBOL        PDATALEN
+  N:0000H         SYMBOL        PDATASTART
+  N:0000H         SYMBOL        PPAGE
+  N:0000H         SYMBOL        PPAGEENABLE
+  D:00A0H         SYMBOL        PPAGE_SFR
+  D:0081H         SYMBOL        SP
+  C:0831H         SYMBOL        STARTUP1
+  N:0000H         SYMBOL        XBPSTACK
+  N:0000H         SYMBOL        XBPSTACKTOP
+  N:0000H         SYMBOL        XDATALEN
+  N:0000H         SYMBOL        XDATASTART
+  C:0000H         LINE#         126
+  C:0831H         LINE#         133
+  C:0833H         LINE#         134
+  C:0834H         LINE#         135
+  C:0835H         LINE#         136
+  C:0837H         LINE#         185
+  C:083AH         LINE#         196
+  -------         ENDMOD        ?C_STARTUP
+
+  -------         MODULE        SY06_02_B
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0080H         PUBLIC        P0
+  C:0800H         PUBLIC        serial
+  B:00A8H.7       PUBLIC        EA
+  B:00A8H.4       PUBLIC        ES
+  B:0098H.0       PUBLIC        RI
+  C:081DH         PUBLIC        main
+  D:0099H         PUBLIC        SBUF
+  D:0098H         PUBLIC        SCON
+  D:0089H         PUBLIC        TMOD
+  C:083DH         PUBLIC        seg
+  D:008DH         PUBLIC        TH1
+  D:008BH         PUBLIC        TL1
+  B:0088H.6       PUBLIC        TR1
+  D:0008H         PUBLIC        a
+  -------         PROC          MAIN
+  C:081DH         LINE#         6
+  C:081DH         LINE#         8
+  C:081DH         LINE#         9
+  C:0820H         LINE#         10
+  C:0823H         LINE#         11
+  C:0826H         LINE#         12
+  C:0829H         LINE#         13
+  C:082BH         LINE#         14
+BL51 BANKED LINKER/LOCATER V6.22                                                      11/27/2024  17:17:00  PAGE 3
+
+
+  C:082DH         LINE#         15
+  C:082FH         LINE#         16
+  C:082FH         LINE#         17
+  C:082FH         LINE#         19
+  -------         ENDPROC       MAIN
+  -------         PROC          SERIAL
+  C:0800H         LINE#         23
+  C:0806H         LINE#         25
+  C:0809H         LINE#         26
+  C:0809H         LINE#         27
+  C:080BH         LINE#         28
+  C:080EH         LINE#         29
+  C:0816H         LINE#         30
+  C:0816H         LINE#         32
+  -------         ENDPROC       SERIAL
+  -------         ENDMOD        SY06_02_B
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 004CH BYTE ( 3%) *
+******************************************************************************
+
+Program Size: data=10.0 xdata=0 code=76
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

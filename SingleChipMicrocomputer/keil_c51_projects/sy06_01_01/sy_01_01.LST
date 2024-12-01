@@ -1,0 +1,49 @@
+C51 COMPILER V9.01   SY_01_01                                                              11/20/2024 17:41:06 PAGE 1   
+
+
+C51 COMPILER V9.01, COMPILATION OF MODULE SY_01_01
+OBJECT MODULE PLACED IN sy_01_01.OBJ
+COMPILER INVOKED BY: D:\applications\Keil\C51\BIN\C51.EXE sy_01_01.c BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          #include <reg51.h>
+   2          
+   3          unsigned char Receive(void)
+   4          {
+   5   1              unsigned char dat;
+   6   1              while(RI==0)
+   7   1                      ;
+   8   1              RI=0;
+   9   1              dat=SBUF;
+  10   1              return dat;
+  11   1      }
+  12          
+  13          void main(void)
+  14          {
+  15   1              TMOD=0x20;
+  16   1              SCON=0x40;
+  17   1              PCON=0x00;
+  18   1              TH1=0xfd;
+  19   1              TL1=0xfd;
+  20   1              TR1=1;
+  21   1              REN=1;
+  22   1              while(1)
+  23   1              {
+  24   2                      P2=Receive();
+  25   2              }
+  26   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     34    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

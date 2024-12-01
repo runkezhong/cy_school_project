@@ -1,0 +1,143 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Project:</h2>
+D:\DataCenter\school_project\SingleChipMicrocomputer\keil_c51_projects\sy06_01\sy06_01.uvproj
+Project File Date:  11/20/2024
+
+<h2>Output:</h2>
+Build target 'Target 1'
+assembling STARTUP.A51...
+compiling sy06_01.c...
+SY06_01.C(5): error C141: syntax error near 'void'
+SY06_01.C(6): error C141: syntax error near '{'
+SY06_01.C(7): error C231: 'SBUF': redefinition
+SY06_01.C(7): error C202: 'dat': undefined identifier
+SY06_01.C(7): error C231: 'SBUF': redefinition
+SY06_01.C(8): error C141: syntax error near 'while'
+SY06_01.C(8): error C141: syntax error near '==', expected ')'
+SY06_01.C(10): error C231: 'TI': redefinition
+SY06_01.C(10): error C231: 'TI': redefinition
+SY06_01.C(12): error C141: syntax error near '}'
+Target not created
+Build target 'Target 1'
+assembling STARTUP.A51...
+compiling sy06_01.c...
+SY06_01.C(5): error C141: syntax error near 'void'
+SY06_01.C(6): error C141: syntax error near '{'
+SY06_01.C(7): error C231: 'SBUF': redefinition
+SY06_01.C(7): error C202: 'dat': undefined identifier
+SY06_01.C(7): error C231: 'SBUF': redefinition
+SY06_01.C(8): error C141: syntax error near 'while'
+SY06_01.C(8): error C141: syntax error near '==', expected ')'
+SY06_01.C(10): error C231: 'TI': redefinition
+SY06_01.C(10): error C231: 'TI': redefinition
+SY06_01.C(12): error C141: syntax error near '}'
+Target not created
+Build target 'Target 1'
+assembling STARTUP.A51...
+compiling sy06_01.c...
+SY06_01.C(5): error C141: syntax error near 'void'
+SY06_01.C(6): error C141: syntax error near '{'
+SY06_01.C(7): error C231: 'SBUF': redefinition
+SY06_01.C(7): error C202: 'dat': undefined identifier
+SY06_01.C(7): error C231: 'SBUF': redefinition
+SY06_01.C(8): error C141: syntax error near 'while'
+SY06_01.C(8): error C141: syntax error near '==', expected ')'
+SY06_01.C(9): error C231: 'TI': redefinition
+SY06_01.C(9): error C231: 'TI': redefinition
+SY06_01.C(10): error C141: syntax error near '}'
+Target not created
+Build target 'Target 1'
+compiling sy06_01.c...
+SY06_01.C(5): error C141: syntax error near 'void'
+SY06_01.C(6): error C141: syntax error near '{'
+SY06_01.C(7): error C231: 'SBUF': redefinition
+SY06_01.C(7): error C202: 'dat': undefined identifier
+SY06_01.C(7): error C231: 'SBUF': redefinition
+SY06_01.C(8): error C141: syntax error near 'while'
+SY06_01.C(8): error C141: syntax error near '==', expected ')'
+SY06_01.C(9): error C231: 'TI': redefinition
+SY06_01.C(9): error C231: 'TI': redefinition
+SY06_01.C(10): error C141: syntax error near '}'
+Target not created
+Build target 'Target 1'
+assembling STARTUP.A51...
+compiling sy06_01.c...
+SY06_01.C(5): error C141: syntax error near 'void'
+SY06_01.C(6): error C141: syntax error near '{'
+SY06_01.C(7): error C231: 'SBUF': redefinition
+SY06_01.C(7): error C202: 'dat': undefined identifier
+SY06_01.C(7): error C231: 'SBUF': redefinition
+SY06_01.C(8): error C141: syntax error near 'while'
+SY06_01.C(8): error C141: syntax error near '==', expected ')'
+SY06_01.C(9): error C231: 'TI': redefinition
+SY06_01.C(9): error C231: 'TI': redefinition
+SY06_01.C(10): error C141: syntax error near '}'
+Target not created
+Build target 'Target 1'
+assembling STARTUP.A51...
+compiling sy06_01.c...
+linking...
+Program Size: data=9.0 xdata=0 code=16
+"sy06_01" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+assembling STARTUP.A51...
+compiling sy06_01.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SEND?SY06_01
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?CO?SY06_01
+Program Size: data=9.0 xdata=0 code=36
+"sy06_01" - 0 Error(s), 2 Warning(s).
+Build target 'Target 1'
+assembling STARTUP.A51...
+compiling sy06_01.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SEND?SY06_01
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?CO?SY06_01
+Program Size: data=9.0 xdata=0 code=83
+"sy06_01" - 0 Error(s), 2 Warning(s).
+Build target 'Target 1'
+assembling STARTUP.A51...
+compiling sy06_01.c...
+SY06_01.C(21): warning C280: 'i': unreferenced local variable
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SEND?SY06_01
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?DELAY?SY06_01
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?CO?SY06_01
+Program Size: data=10.0 xdata=0 code=84
+"sy06_01" - 0 Error(s), 4 Warning(s).
+Build target 'Target 1'
+assembling STARTUP.A51...
+compiling sy06_01.c...
+SY06_01.C(21): warning C280: 'i': unreferenced local variable
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SEND?SY06_01
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?DELAY?SY06_01
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?CO?SY06_01
+Program Size: data=10.0 xdata=0 code=90
+"sy06_01" - 0 Error(s), 4 Warning(s).
+Build target 'Target 1'
+assembling STARTUP.A51...
+compiling sy06_01.c...
+linking...
+Program Size: data=10.0 xdata=0 code=127
+"sy06_01" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+assembling STARTUP.A51...
+compiling sy06_01.c...
+linking...
+Program Size: data=10.0 xdata=0 code=127
+creating hex file from "sy06_01"...
+"sy06_01" - 0 Error(s), 0 Warning(s).

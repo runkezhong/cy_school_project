@@ -1,0 +1,140 @@
+C51 COMPILER V9.01   SY05_03                                                               11/20/2024 16:04:53 PAGE 1   
+
+
+C51 COMPILER V9.01, COMPILATION OF MODULE SY05_03
+OBJECT MODULE PLACED IN sy05_03.OBJ
+COMPILER INVOKED BY: D:\applications\Keil\C51\BIN\C51.EXE sy05_03.c BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          #include <reg51.h>
+   2          
+   3          #define uchar unsigned char
+   4          #define uint unsigned int
+   5          
+   6          // 
+   7          uchar code seg_code[] = {0xc0, 0xf9, 0xa4, 0xb0, 0x99, 0x92, 0x82, 0xf8, 0x80, 0x90};
+   8          
+   9          uchar hour = 16;
+  10          uchar minute = 10;
+  11          uchar second = 10;
+  12          
+  13          void delay(uint z)
+  14          {
+  15   1          uint x, y;
+  16   1          for (x = z; x > 0; x--)
+  17   1              for (y = 110; y > 0; y--);
+  18   1      }
+  19          
+  20          void display()
+  21          {
+  22   1          uchar i;
+  23   1          for (i = 0; i < 8; i++)
+  24   1          {
+  25   2              switch (i)
+  26   2              {
+  27   3                  case 0:
+  28   3                      P2 = 0x01;
+  29   3                      P0 = seg_code[hour / 10];
+  30   3                      break;
+  31   3                  case 1:
+  32   3                      P2 = 0x02;
+  33   3                      P0 = seg_code[hour % 10];
+  34   3                      break;
+  35   3                  case 2:
+  36   3                      P2 = 0x04;
+  37   3                      P0 = 0xbf; 
+  38   3                      break;
+  39   3                  case 3:
+  40   3                      P2 = 0x08;
+  41   3                      P0 = seg_code[minute / 10];
+  42   3                      break;
+  43   3                  case 4:
+  44   3                      P2 = 0x10;
+  45   3                      P0 = seg_code[minute % 10];
+  46   3                      break;
+  47   3                      case 5:
+  48   3                      P2 = 0x20;
+  49   3                      P0 = 0xbf; 
+  50   3                      break;
+  51   3                  case 6:
+  52   3                      P2 = 0x40;
+  53   3                      P0 = seg_code[second / 10];
+  54   3                      break;
+  55   3                  case 7:
+C51 COMPILER V9.01   SY05_03                                                               11/20/2024 16:04:53 PAGE 2   
+
+  56   3                      P2 = 0x80;
+  57   3                      P0 = seg_code[second % 10];
+  58   3                      break;
+  59   3              }
+  60   2              delay(1);
+  61   2          }
+  62   1      }
+  63          
+  64          void timer0_init()
+  65          {
+  66   1          TMOD = 0x01;
+  67   1          TH0 = (65536 - 50000) / 256;
+  68   1          TL0 = (65536 - 50000) % 256;
+  69   1          EA = 1;
+  70   1          ET0 = 1;
+  71   1          TR0 = 1;
+  72   1      }
+  73          
+  74          void timer0() interrupt 1
+  75          {
+  76   1          static uchar count = 0;
+  77   1          TH0 = (65536 - 50000) / 256;
+  78   1          TL0 = (65536 - 50000) % 256;
+  79   1              EA=1; 
+  80   1              ET0=1; 
+  81   1              TR0=1; 
+  82   1      
+  83   1      
+  84   1          count++;
+  85   1          if (count == 20)
+  86   1          {
+  87   2              count = 0;
+  88   2              second++;
+  89   2              if (second == 60)
+  90   2              {
+  91   3                  second = 0;
+  92   3                  minute++;
+  93   3                  if (minute == 60)
+  94   3                  {
+  95   4                      minute = 0;
+  96   4                      hour++;
+  97   4                      if (hour == 24)
+  98   4                      {
+  99   5                          hour = 0;
+ 100   5                      }
+ 101   4                  }
+ 102   3              }
+ 103   2          }
+ 104   1      }
+ 105          
+ 106          void main()
+ 107          {
+ 108   1          timer0_init();
+ 109   1          while (1)
+ 110   1          {
+ 111   2              display();
+ 112   2          }
+ 113   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    237    ----
+C51 COMPILER V9.01   SY05_03                                                               11/20/2024 16:04:53 PAGE 3   
+
+   CONSTANT SIZE    =     10    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =      4    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)
