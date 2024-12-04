@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>钟润柯A</title>
+    <style >
+        .divh {
+            float: left;
+            clear: left;
+            margin-top: 10px;
+        }
+        .divc {
+            float: left;
+            width: 200px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div style="width: 260px;">
+        <h4>输入用户注册信息</h4>
+        <form>
+            <div class="divh">姓名：</div><div class="divc"><input type="text"></div>
+            <div class="divh">身份：</div><div class="divc"><input type="text" value="学生"></div>
+            <div class="divh">性别</div><div class="divc">
+                <input type="radio" value="male">男
+                <input type="radio" value="female">女
+            </div>
+            <div class="divh">爱好：</div><div class="divc">
+                <input type="checkbox">读书
+                <input type="checkbox">旅行
+                <input type="checkbox">其他
+            </div>
+            <div class="divh">城市：</div><div class="divc">
+                <select>
+                    <option value="" selected>请选择</option>
+                    <option value="beijing">北京</option>
+                    <option value="shanghai">上海</option>
+                    <option value="guangzhou">广州</option>
+                    <option value="shenzhen">深圳</option>
+                </select>
+            </div>
+            <div class="divh">密码：</div><div class="divc"><input type="password"></div>
+            <div class="divh"></div><div class="divc">
+                <button>注册</button>
+                <button>重置</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
