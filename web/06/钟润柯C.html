@@ -1,29 +1,149 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>钟润柯C</title>
+    <link rel="stylesheet" href="钟润柯D.css">
 </head>
-<body>
+
+<body id="container">
     <!-- 页眉区 -->
     <div id="head"></div>
 
     <!-- 导航区 -->
     <div id="nav_bg">
         <ul class="nav">
-
+            <li><a href="#">首页</a></li>
+            <li><a href="#">会员</a></li>
+            <li><a href="#">活动</a></li>
+            <li><a href="#">直播</a></li>
+            <li><a href="#">视频</a></li>
+            <li><a href="#">注册</a></li>
         </ul>
     </div>
 
     <!-- 焦点区 -->
-     <div id="banner">
+    <div id="banner">
+        <img src="imageszrk/banner.jpg" alt="">
+    </div>
 
-     </div>
-
-     <!-- 内容区 -->
-      <div id="content">
+    <!-- 内容区 -->
+    <div id="content">
         <h2 class="step">注册步骤</h2>
-      </div>
+        <form class="one">
+            <h3>您的账号信息</h3>
+            <hr />
+            <table class="content">
+                <tr>
+                    <th>注册方式：</th>
+                    <td>
+                        <input type="radio" name="register" value="email"><span>E-mail注册</span>
+                        <input type="radio" name="register" value="phone"><span>手机号码注册</span>
+                    </td>
+                </tr>
+                <tr>
+                    <th>注册邮箱：</th>
+                    <td>
+                        <input class="input_style" type="text" name="email" >
+                    </td>
+                </tr>
+                <tr>
+                    <th>注册手机：</th>
+                    <td>
+                        <input class="input_style" type="text" name="phone">
+                    </td>
+                </tr>
+                <tr>
+                    <th>登录密码：</th>
+                    <td>
+                        <input class="input_style" type="password" name="pwd">
+                    </td>
+                </tr>
+                <tr>
+                    <th>验证密码：</th>
+                    <td>
+                        <input class="input_style" type="password" name="pwd2">
+                    </td>
+                </tr>
+                <tr>
+                    <th>昵称：</th>
+                    <td>
+                        <input class="input_style" type="text" name="nickname">
+                    </td>
+                </tr>
+            </table>
+            <h3>您的个人信息</h3>
+            <hr />
+            <table class="content">
+                <tr>
+                    <th>性别：</th>
+                    <td>
+                        <label for="boy"><input type="radio" name="sex" id="boy" />男</label>
+                        <label for="girl"><input type="radio" name="sex" id="girl" />女</label>
+                    </td>
+                </tr>
+                <tr>
+                    <th>学历：</th>
+                    <td>
+                        <select>
+                            <option>请选择</option>
+                            <option>博士</option>
+                            <option>硕士</option>
+                            <option>本科</option>
+                            <option>专科</option>
+                            <option>高中</option>
+                            <option>初中</option>
+                            <option>小学</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th>所在城市：</th>
+                    <td>
+                        <select>
+                            <option>北京</option>
+                            <option>上海</option>
+                            <option>广州</option>
+                            <option>深圳</option>
+                            <option>重庆</option>
+                            <option>成都</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th>兴趣爱好：</th>
+                    <td>
+                        <input type="checkbox"><span>足球</span>
+                        <input type="checkbox"><span>篮球</span>
+                        <input type="checkbox"><span>游泳</span>
+                        <input type="checkbox"><span>唱歌</span>
+                        <input type="checkbox"><span>跑步</span>
+                        <input type="checkbox"><span>瑜伽</span>
+                        <input type="checkbox"><span>其他</span>
+                    </td>
+                </tr>
+                <tr>
+                    <th>自我介绍：</th>
+                    <td>
+                        <textarea class="textarea_style" placeholder="请输入内容"></textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" style="text-align: center;">
+                        <button class="submit_btn" type="submit"></button>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+
+    <!-- 页脚区 显示版权信息 -->
+    <div id="footer">
+        <p>Copyright @ 2021 <span>Zhong Runke</span>,All rihts reserved.</p>
+        <p>2021，版权所有 千年之恋 ICP备案13385453</p>
+    </div>
 </body>
+
 </html>
